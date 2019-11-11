@@ -1,0 +1,86 @@
+[
+     {
+          "DAY": "MON",
+          "SUBJECT": "INFO 2201",
+          "START": "11.30 ",
+          "END": " 12.50",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "TUE",
+          "SUBJECT": "CSC 2201",
+          "START": "10.00 ",
+          "END": " 11.20",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "TUE",
+          "SUBJECT": "INFO 2103",
+          "START": "2.00 ",
+          "END": "3.20",
+          "FORMAT": "PM"
+     },
+     {
+          "DAY": "TUE",
+          "SUBJECT": "INFO 2103",
+          "START": "5.00 ",
+          "END": "6.50",
+          "FORMAT": "PM"
+     },
+     {
+          "DAY": "TUE",
+          "SUBJECT": "INFO 2201",
+          "START": "5.00 ",
+          "END": "6.50",
+          "FORMAT": "PM"
+     },
+     {
+          "DAY": "TUE",
+          "SUBJECT": "INFO 2401",
+          "START": "11.30 ",
+          "END": " 12.50",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "WED",
+          "SUBJECT": "INFO 2201",
+          "START": "11.30 ",
+          "END": " 12.50",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "WED",
+          "SUBJECT": "UNGS 2011",
+          "START": "4.00 ",
+          "END": "5.50",
+          "FORMAT": "PM"
+     },
+     {
+          "DAY": "THUR",
+          "SUBJECT": "CSC 2201",
+          "START": "10.00 ",
+          "END": " 11.20",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "THUR",
+          "SUBJECT": "INFO 2103",
+          "START": "2.00 ",
+          "END": "3.20",
+          "FORMAT": "PM"
+     },
+     {
+          "DAY": "THUR",
+          "SUBJECT": "INFO 2401",
+          "START": "11.30 ",
+          "END": " 12.50",
+          "FORMAT": "AM"
+     },
+     {
+          "DAY": "FRI",
+          "SUBJECT": "MPU 3122",
+          "START": "10.30 ",
+          "END": " 12.20",
+          "FORMAT": "AM"
+     }
+]

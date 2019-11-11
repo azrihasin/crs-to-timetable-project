@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='timetable.css') }}">
+ 
+    <style media="screen">
+    </style>
+
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+
+    <div class="input">
+
+      <form class="" action="index.html" method="post">
+
+
+
+      <p>SUBJECT
+
+        <input id="timetable" type="text"  value="">
+
+
+
+
+        DAY
+
+        <select id="day">
+          <option value="SUN">SUN</option>
+          <option value="MON">MON</option>
+          <option value="TUE">TUE</option>
+          <option value="WED">WED</option>
+          <option value="THUR">THUR</option>
+          <option value="FRI">FRI</option>
+          <option value="SAT">SAT</option>
+        </select>
+
+
+        START TIME
+
+        <input id="time_start" type="time" name="usr_time">
+
+
+        END TIME
+
+        <input id="time_end" type="time" name="usr_time">
+
+
+
+        <button type="button" onClick="myFunction()" style="width:100px;height:20px;"name="button" value="submit">Add</button>
+
+      </p>
+
+
+
+
+      </form>
+
+
+
+    </div>
+
+    <form action = "/show" method = "post" enctype="multipart/form-data">  
+      <input type="file"  name="file" />  
+      <input type = "submit" id="upload" value="Upload">  
+    </form> 
+    <input type="button" id="convert" value="Convert">
+    <!-- <p id="data"> {{data}}</p>   -->
+  
+
+
+    
+
+    <div class="timetable">
+
+      <div class="DAY">
+
+        <div id="MONDAY">
+
+          <p>MON</p>
+
+        </div>
+
+        <div id="TUESDAY">
+
+          <p>TUE</p>
+
+        </div>
+
+        <div id="WEDNESDAY">
+          <p>WED</p>
+        </div>
+
+        <div id="THURSDAY">
+          <p>THUR</p>
+        </div>
+
+        <div id="FRIDAY">
+          <p>FRI</p>
+        </div>
+
+        <div id="SATURDAY">
+          <p>SAT</p>
+        </div>
+
+        <div id="SUNDAY">
+          <p>SUN</p>
+        </div>
+
+      </div>
+
+      <div class="TIME">
+
+        <div id="seven">
+
+          <p>7:00</p>
+
+        </div>
+
+        <div id="sevenhalf">
+
+          <p>7:30</p>
+
+        </div>
+
+        <div id="eight">
+
+          <p>8:00</p>
+
+        </div>
+
+        <div id="eighthalf">
+
+          <p>8:30</p>
+
+        </div>
+
+        <div id="nine">
+          <p>9:00</p>
+        </div>
+
+        <div id="ninehalf">
+          <p>9:30</p>
+        </div>
+
+        <div id="ten">
+          <p>10:00</p>
+        </div>
+
+        <div id="tenhalf">
+          <p>10:30</p>
+        </div>
+
+        <div id="eleven">
+          <p>11:00</p>
+        </div>
+
+        <div id="elevenhalf">
+          <p>11:30</p>
+        </div>
+
+        <div id="twelve">
+          <p>12:00</p>
+        </div>
+
+        <div id="twelvehalf">
+          <p>12:30</p>
+        </div>
+
+        <div id="thirteen">
+          <p>13:00</p>
+        </div>
+
+        <div id="thirteenhalf">
+          <p>13:30</p>
+        </div>
+
+        <div id="fourteen">
+          <p>14:00</p>
+        </div>
+
+        <div id="fourteenhalf">
+          <p>14:30</p>
+        </div>
+
+        <div id="fifthteen">
+          <p>15:00</p>
+        </div>
+
+        <div id="fifthteenhalf">
+          <p>15:30</p>
+        </div>
+
+        <div id="sixthteen">
+          <p>16:00</p>
+        </div>
+
+        <div id="sixthteenhalf">
+          <p>16:00</p>
+        </div>
+
+        <div id="seventeen">
+          <p>17:00</p>
+        </div>
+
+        <div id="seventeenhalf">
+          <p>17:30</p>
+        </div>
+
+        <div id="eightteen">
+          <p>18:00</p>
+        </div>
+
+        <div id="eightteenhalf">
+          <p>18:30</p>
+        </div>
+
+        <div id="nineteen">
+          <p>19:00</p>
+        </div>
+
+        <div id="nineteenhalf">
+          <p>19:30</p>
+        </div>
+
+        <div id="twenty">
+          <p>20:00</p>
+        </div>
+
+        <div id="twentyhalf">
+          <p>20:30</p>
+        </div>
+
+        <div id="twentyone">
+          <p>21:00</p>
+        </div>
+
+        <div id="twentyonehalf">
+          <p>21:30</p>
+        </div>
+
+        <div id="twentytwo">
+          <p>22:00</p>
+        </div>
+
+        <div id="twentytwohalf">
+          <p>22:30</p>
+        </div>
+
+
+      </div>
+
+
+
+      <div id="MON">
+
+
+      </div>
+
+      <div id="TUE">
+
+      </div>
+
+      <div id="WED">
+
+      </div>
+
+      <div id="THUR">
+
+      </div>
+
+      <div id="FRI">
+
+      </div>
+
+      <div id="SAT">
+
+      </div>
+
+      <div id="SUN">
+
+      </div>
+
+    </div>
+
+
+    <div id="ELEMENT">
+
+      <ul id="SUBJECTELEMENT">
+        
+
+      </ul>
+
+    </div>
+
+    <script>
+      // var data1 = {{ data|safe }};
+      // console.log(data1);
+      </script>
+   
+    <script src="{{ url_for('static',filename='timetable.js') }}" ></script>
+
+  </body>
+
+</html>
