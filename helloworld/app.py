@@ -27,16 +27,10 @@ def show():
     if request.method == 'POST':  
         f = request.files['file']  
         f.save(f.filename)
-        data1=script(f.filename)
         data=process(f.filename)
         load = json.loads(data)
-        return render_template("timetable.html", data ="Done") 
-
-@app.route('/create-graph.js')
-def script(f):
-    data=process(f)
-    
-    return render_template('timetable.js',data=data)        
+        return render_template("timetable.html", data=data) 
+     
 
 if __name__ == '__main__':  
     app.run(debug = True)  

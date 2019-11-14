@@ -1,4 +1,6 @@
 
+ 
+
 
 document.getElementById("convert").addEventListener("click", function() {
  // var file_to_read = document.getElementById("get_the_file").files[0];
@@ -10,7 +12,16 @@ document.getElementById("convert").addEventListener("click", function() {
   //var content =document.getElementById("data");
 
     //var data = JSON.parse(content); // Array of Objects.
-    alert('{{data}}'); // You can index every object
+   
+     // You can index every object
+
+    var info={{data|tojson|safe}};
+
+    
+
+    var data=json.parse(info);
+
+    alert(data);
 
     for(var x=0;x<data.length;x++){
 
