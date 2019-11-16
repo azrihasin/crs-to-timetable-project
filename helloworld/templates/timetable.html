@@ -52,7 +52,7 @@
 
 
 
-        <button type="button" onClick="myFunction()" style="width:100px;height:20px;" name="button"
+        <button type="button" id="add" onClick="myFunction()" style="width:100px;height:20px;" name="button"
           value="submit">Add</button>
 
 
@@ -436,10 +436,12 @@
           button.style.width = "20%";
           button.style.height = "20px";
           button.setAttribute("id", x);
+          button.id=x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML ="Remove";
 
@@ -486,8 +488,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -531,8 +534,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -577,8 +581,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -623,8 +628,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -669,8 +675,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -715,8 +722,9 @@
           button.id = x;
           button.value = x;
 
-          div1.onclick = function () {
-            alert(div1.id);
+          button.onclick = function () {
+            document.getElementById(this.id).remove();
+            document.getElementById(this.id).remove();
           };
           button.innerHTML = "Remove";
 
@@ -735,39 +743,11 @@
     }).call(this,i)
     }
 
-      array.push(button);
-      array[i].addEventListener("click", function () {
- 
-      
-    });
-    
-
-  
-    
-
- //  function deleteRow(i)
- //  {
-
-
- //    var elem = document.getElementById(i);
- //       elem.parentNode.removeChild(elem);
-
- //       var elem = document.getElementById(i);
- //       elem.parentNode.removeChild(elem);
- //  }
-
-//  var div = document.getElementById('SUBJECTELEMENT');
-//   console.log(div.childNodes.length);
-
  });
 
  
-
-
-
-
 </script>
-
+<script type="text/javascript"src="{{ url_for('static', filename='timetable.js') }}"></script>
 
 
 
