@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <link rel="stylesheet" href="{{ url_for('static',filename='timetable.css') }}">
 
   <style media="screen">
@@ -70,11 +70,12 @@
   </div>
 
   <form action="/show" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" />
+    <input type="file" id="pdf-upload" name="file" />
     <input type="submit" id="upload" value="Upload">
   </form>
 
-
+  <hr/>
+<canvas id="canvas" style="position: absolute; top:1000px;height: 1000px;width: 100%;"></canvas>
 
 
 
@@ -292,6 +293,8 @@
   </div>
 
 
+
+
   <div id="ELEMENT">
 
     <ul id="SUBJECTELEMENT">
@@ -302,6 +305,43 @@
   </div>
 
   <script>
+
+document.getElementById("pdf-upload").addEventListener("change", function(e){
+	var canvasElement = document.getElementById("canvas");
+	var file = e.target.files[0]
+	if(file.type != "application/pdf"){
+		console.error(file.name, "is not a pdf file.");
+		return
+	}
+	
+	var fileReader = new FileReader();  
+
+	fileReader.onload = function() {
+		var typedarray = new Uint8Array(this.result);
+
+		PDFJS.getDocument(typedarray).then(function(pdf) {
+			// you can now use *pdf* here
+			console.log("the pdf has ",pdf.numPages, "page(s).");
+			pdf.getPage(pdf.numPages).then(function(page) {
+				// you can now use *page* here
+				var viewport = page.getViewport(2.0);
+				var canvas = document.querySelector("canvas")
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
+
+
+				page.render({
+					canvasContext: canvas.getContext('2d'),
+					viewport: viewport
+				});
+			});
+
+		});
+	};
+
+	fileReader.readAsArrayBuffer(file);
+})
+
 
 
 
@@ -745,6 +785,7 @@
 
  });
 
+ 
  
 </script>
 <script type="text/javascript"src="{{ url_for('static', filename='timetable.js') }}"></script>

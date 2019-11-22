@@ -55,8 +55,7 @@ def process(f):
         text = pytesseract.image_to_string(im, lang = 'eng')
         recognized_text.append(text)
     
-    print("done")
-
+    
     file = open('a.txt', 'w')
 
     file.write(text) 
@@ -72,7 +71,7 @@ def process(f):
             array.append(line)
 
 
-
+    print(array)
 
     #array.append(text)'''
 
@@ -121,30 +120,30 @@ def process(f):
 
             
             
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
                 
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
             
                 mon.append(code)
 
             
             
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 mon.append(code1)
 
-            elif re.findall("\w{3,4}\s\d{4}",array[i-2]):
+            elif re.findall("\w{2,4}\s\d{4}",array[i-2]):
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 mon.append(code2)
 
             else:
 
-                code3 = re.findall("\w{3,4}\s\d{4}",array[i-3])
+                code3 = re.findall("\w{2,4}\s\d{4}",array[i-3])
                 
                 mon.append(code3)
 
@@ -170,6 +169,13 @@ def process(f):
                 
                 montime.append(date)
 
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                
+                montime.append(date)
+
             #for format
 
             if re.search('\sAM\s',array[i]):
@@ -185,24 +191,24 @@ def process(f):
 
             
 
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
 
             
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
                 mon.append(code)
                 wed.append(code)
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 mon.append(code1)
                 wed.append(code1)
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 mon.append(code2)
                 wed.append(code2)
@@ -232,7 +238,14 @@ def process(f):
                 
                 montime.append(date)
                 wedtime.append(date)
+                
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
 
+                
+                montime.append(date)
+                wedtime.append(date)
             #for format
 
             if re.search('\sAM\s',array[i]):
@@ -249,22 +262,22 @@ def process(f):
 
         
 
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
             
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
 
                 tue.append(code)
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 tue.append(code1)
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 tue.append(code2)
 
@@ -301,6 +314,11 @@ def process(f):
 
                 tuetime.append(date)
 
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                tuetime.append(date)
 
             #for format
 
@@ -318,22 +336,22 @@ def process(f):
 
     
 
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
             
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
                 thur.append(code)
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 thur.append(code1)
 
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 thur.append(code2)
 
@@ -361,6 +379,13 @@ def process(f):
 
                 thurtime.append(date)
 
+
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                thurtime.append(date)
+
             #for format
 
             if re.search('\sAM\s',array[i]):
@@ -376,24 +401,24 @@ def process(f):
         elif re.search("T-TH",array[i]):
             
 
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
                 tue.append(code)
                 thur.append(code)
 
                 
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 tue.append(code1)
                 thur.append(code1)
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 tue.append(code2)
                 thur.append(code2)
@@ -427,6 +452,14 @@ def process(f):
                 tuetime.append(date)
                 thurtime.append(date)
 
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                
+                tuetime.append(date)
+                thurtime.append(date)
+
             #for format
 
             if re.search('\sAM\s',array[i]):
@@ -442,28 +475,28 @@ def process(f):
         elif re.search("WED",array[i]):
             
             
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
                 
                 wed.append(code)
             
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 wed.append(code1)
 
-            elif re.findall("\w{3,4}\s\d{4}",array[i-2]):
+            elif re.findall("\w{2,4}\s\d{4}",array[i-2]):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code1 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 wed.append(code1)
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-3])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-3])
                 
                 wed.append(code2)
             
@@ -492,7 +525,12 @@ def process(f):
                 date = re.findall("\d{1,2}\.\d{2}\s[\\-]\d{1,2}\.\d{2}",array[i])
 
                 wedtime.append(date)
-                
+
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                wedtime.append(date) 
 
             #for format
 
@@ -508,27 +546,27 @@ def process(f):
                 
         elif re.search("FRI",array[i]):
         
-            if re.findall("\w{3,4}\s\d{4}",array[i]):
+            if re.findall("\w{2,4}\s\d{4}",array[i]):
             
-                code = re.findall("\w{3,4}\s\d{4}",array[i])
+                code = re.findall("\w{2,4}\s\d{4}",array[i])
 
                 fri.append(code)
 
-            elif re.findall("\w{3,4}\s\d{4}",prevline):
+            elif re.findall("\w{2,4}\s\d{4}",prevline):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",prevline)
+                code1 = re.findall("\w{2,4}\s\d{4}",prevline)
                 
                 fri.append(code1)
 
-            elif re.findall("\w{3,4}\s\d{4}",array[i-2]):
+            elif re.findall("\w{2,4}\s\d{4}",array[i-2]):
 
-                code1 = re.findall("\w{3,4}\s\d{4}",array[i-2])
+                code1 = re.findall("\w{2,4}\s\d{4}",array[i-2])
                 
                 fri.append(code1)
 
             else:
 
-                code2 = re.findall("\w{3,4}\s\d{4}",array[i-3])
+                code2 = re.findall("\w{2,4}\s\d{4}",array[i-3])
                 
                 fri.append(code2)
 
@@ -555,6 +593,12 @@ def process(f):
             elif re.findall("\d{1,2}\.\d{2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
 
                 date = re.findall("\d{1,2}\.\d{2}\s[\\-]\d{1,2}\.\d{2}",array[i])
+
+                fritime.append(date)
+
+            elif re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i]):
+    
+                date = re.findall("\d{1,2}\s[\\-]\d{1,2}\.\d{2}",array[i])
 
                 fritime.append(date)
 
@@ -700,7 +744,6 @@ def process(f):
         for csvRow in csvReader:
             arr.append(csvRow)
                     
-    print(arr)
 
     '''with open(jsonFilePath, "w") as jsonFile:
         jsonFile.write(json.dumps(arr, indent = 5))'''
